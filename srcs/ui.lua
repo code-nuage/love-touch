@@ -13,7 +13,7 @@ end
 
 function Button:isPressed(x, y)
     if x > self.x and y > self.y then
-        if x < self.x - self.w and y < self.y - self.h then
+        if x < self.x + self.w and y < self.y + self.h then
             return 1
         end
     end
