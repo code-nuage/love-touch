@@ -1,23 +1,21 @@
-local ball = {
-    x = 100,
-    y = 100,
-    speedX = 100,
-    speedY = 150,
-    radius = 50
-}
+require("srcs/player")
+require("srcs/ui")
+
+function love.load()
+    PLAYER = Player:new(100, 100)
+    UP = Button:new("UP", love.graphics.getWidth() - 200, love.graphics.getHeight() - 200, 100, 100)
+    DOWN = Button:new("DOWN", love.graphics.getWidth() - 200, love.graphics.getHeight() - 100, 100, 100)
+    LEFT = Button:new("LEFT", love.graphics.getWidth() - 300, love.graphics.getHeight() - 100, 100, 100)
+    RIGHT = Button:new("RIGHT", love.graphics.getWidth() - 100, love.graphics.getHeight() - 100, 100, 100)
+end
 
 function love.update(dt)
-    ball.x = ball.x + ball.speedX * dt
-    ball.y = ball.y + ball.speedY * dt
-
-    if ball.x < ball.radius or ball.x > love.graphics.getWidth() - ball.radius then
-        ball.speedX = -ball.speedX
-    end
-    if ball.y < ball.radius or ball.y > love.graphics.getHeight() - ball.radius then
-        ball.speedY = -ball.speedY
-    end
 end
 
 function love.draw()
-    love.graphics.circle("fill", ball.x, ball.y, ball.radius)
+    PLAYER:draw()
+    UP:draw()
+    DOWN:draw()
+    LEFT:draw()
+    RIGHT:draw()
 end
