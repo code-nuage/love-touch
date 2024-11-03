@@ -10,6 +10,7 @@ function love.load()
 end
 
 function love.update(dt)
+    PLAYER:update(dt)
 end
 
 function love.draw()
