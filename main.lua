@@ -25,6 +25,6 @@ function love.draw()
 
     for _, id in ipairs(touches) do
         local x, y = love.touch.getPosition(id)
-        love.graphics.circle("fill", x - 25, y - 25, 50)
+        love.graphics.circle("fill", x, y, 10)
     end
 end
