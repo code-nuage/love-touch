@@ -19,4 +19,12 @@ function love.draw()
     DOWN:draw()
     LEFT:draw()
     RIGHT:draw()
+
+
+    local touches = love.touch.getTouches()
+
+    for _, id in ipairs(touches) do
+        local x, y = love.touch.getPosition(id)
+        love.graphics.circle("fill", x - 25, y - 25, 50)
+    end
 end
